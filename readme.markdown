@@ -5,7 +5,7 @@ recursively transform key strings to camel-case
 fork of the original substack/camelize to better operate with the results of
 minimist & subarg: leaves "\_" alone.
 
-[![build status](https://secure.travis-ci.org/substack/camelize-minimist.png)](http://travis-ci.org/substack/camelize-minimist)
+[![build status](https://secure.travis-ci.org/forivall/camelize-minimist.png)](http://travis-ci.org/forivall/camelize-minimist)
 
 # example
 
