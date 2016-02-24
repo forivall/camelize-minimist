@@ -42,7 +42,7 @@ output:
 # methods
 
 ``` js
-var camelize = require('camelize')
+var camelize = require('camelize-minimist')
 ```
 
 ## camelize(obj)
@@ -54,7 +54,7 @@ Convert the key strings in `obj` to camel-case recursively.
 With [npm](https://npmjs.org) do:
 
 ```
-npm install camelize
+npm install camelize-minimist
 ```
 
 To use in the browser, use [browserify](http://browserify.org).
