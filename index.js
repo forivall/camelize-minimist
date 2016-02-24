@@ -15,7 +15,7 @@ function walk (obj) {
 }
 
 function camelCase(str) {
-    return str.replace(/[_.-](\w|$)/g, function (_,x) {
+    return /^_+$/.test(str) ? str : str.replace(/[_.-](\w|$)/g, function (_,x) {
         return x.toUpperCase();
     });
 }

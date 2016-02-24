@@ -46,9 +46,10 @@ test('only camelize strings that are the root value', function (t) {
 });
 
 test('leave keys that are just an underscore alone', function (t) {
-    t.plan(1);
+    t.plan(2);
     var o = {_: ['beep', 'boop'], 'beep-boop': true};
     t.deepEqual(camelize(o), {_: ['beep', 'boop'], 'beepBoop': true})
+    t.equal(camelize("__"), "__")
 })
 
 test('camelize awkward strings', function(t) {
