@@ -50,3 +50,12 @@ test('leave keys that are just an underscore alone', function (t) {
     var o = {_: ['beep', 'boop'], 'beep-boop': true};
     t.deepEqual(camelize(o), {_: ['beep', 'boop'], 'beepBoop': true})
 })
+
+test('camelize awkward strings', function(t) {
+    t.plan(5);
+    t.equal(camelize('a--b'), 'a-B');
+    t.equal(camelize('a b'), 'a b');
+    t.equal(camelize('__proto__'), '_proto_');
+    t.equal(camelize('...beep'), '..Beep');
+    t.equal(camelize('boop...'), 'boop..');
+})
