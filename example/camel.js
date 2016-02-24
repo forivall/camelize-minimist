@@ -1,10 +1,11 @@
-var camelize = require('../');
+var camelize = require('camelize-minimist');
 var obj = {
-    fee_fie_foe: 'fum',
-    beep_boop: [
-        { 'abc.xyz': 'mno' },
-        { 'foo-bar': 'baz' }
-    ]
+    'fee-fie-foe': 'fum',
+    beep_boop: {
+        _: ["zip-zap"],
+        'abc.xyz': 'mno',
+        'foo_bar': 'baz'
+    }
 };
 var res = camelize(obj);
 console.log(JSON.stringify(res, null, 2));

@@ -1,21 +1,23 @@
-# camelize
+# camelize-minimist
 
 recursively transform key strings to camel-case
 
-[![build status](https://secure.travis-ci.org/substack/camelize.png)](http://travis-ci.org/substack/camelize)
+fork of the original substack/camelize to better operate with the results of
+minimist & subarg: leaves "\_" alone.
 
-[![browser support](https://ci.testling.com/substack/camelize.png)](http://ci.testling.com/substack/camelize)
+[![build status](https://secure.travis-ci.org/substack/camelize-minimist.png)](http://travis-ci.org/substack/camelize-minimist)
 
 # example
 
 ``` js
-var camelize = require('camelize');
+var camelize = require('camelize-minimist');
 var obj = {
-    fee_fie_foe: 'fum',
-    beep_boop: [
-        { 'abc.xyz': 'mno' },
-        { 'foo-bar': 'baz' }
-    ]
+    'fee-fie-foe': 'fum',
+    beep_boop: {
+        _: ["zip-zap"],
+        'abc.xyz': 'mno',
+        'foo_bar': 'baz'
+    }
 };
 var res = camelize(obj);
 console.log(JSON.stringify(res, null, 2));
@@ -26,15 +28,15 @@ output:
 ```
 {
   "feeFieFoe": "fum",
-  "beepBoop": [
-    {
-      "abcXyz": "mno"
-    },
-    {
-      "fooBar": "baz"
-    }
-  ]
+  "beepBoop": {
+    "_": [
+      "zip-zap"
+    ],
+    "abcXyz": "mno",
+    "fooBar": "baz"
+  }
 }
+
 ```
 
 # methods
